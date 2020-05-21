@@ -26,7 +26,7 @@ const useStyles = makeStyles(theme => ({
   menuSliderContainer: {
     width: 250,
     background: "#511",
-    height: "30rem"
+    height: "100%"
   },
   avatar: {
     display: "block",
@@ -59,17 +59,26 @@ const menuItems = [
 ];
 const NavBar = () => {
   const classes = useStyles();
-  
-  const [state,setState]=useState({right:false});
-  const toggleSlider = (slider,open) => (event)  =>{
-    if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
-        return;
-      }
-      setState({...state,[slider]:open })
-  }
+
+  //initialize direction and state to right.
+  const [state, setState] = useState({ right: false });
+
+  const toggleSlider = (slider, open) => event => {
+    if (
+      event.type === "keydown" &&
+      (event.key === "Tab" || event.key === "Shift")
+    ) {
+      return;
+    }
+    setState({ ...state, [slider]: open });
+  };
 
   const sideList = slider => (
-    <Box className={classes.menuSliderContainer} component="div">
+    <Box
+      className={classes.menuSliderContainer}
+      onClick={toggleSlider(slider, false)}
+      component="div"
+    >
       <Avatar
         className={classes.avatar}
         src={avatarimage}
@@ -95,17 +104,21 @@ const NavBar = () => {
     <>
       <Box component="nav">
         <AppBar position="static" style={{ background: "black" }}>
-          <Toolbar> 
-            <IconButton onClick={toggleSlider("right",true)}>
+          <Toolbar>
+            <IconButton onClick={toggleSlider("right", true)}>
               <ArrowBack style={{ color: "tomato" }} />
             </IconButton>
             <Typography style={{ color: "tan" }} variant="h5">
               {" "}
               Portfolio
             </Typography>
-        <MobileRightMenuSlider anchor="right" open={state.right}>
-{sideList("right")}
-        </MobileRightMenuSlider>
+            <MobileRightMenuSlider
+              anchor="right"
+              onClose={toggleSlider("right", false)}
+              open={state.right}
+            >
+              {sideList("right")}
+            </MobileRightMenuSlider>
           </Toolbar>
         </AppBar>
       </Box>
