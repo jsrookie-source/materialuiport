@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import {Link} from "react-router-dom";
 import {
   AppBar,
   Toolbar,
@@ -22,6 +23,7 @@ import {
   ContactMail
 } from "@material-ui/icons";
 import avatarimage from "../images/avatarimage.jpg";
+import Footer from "./footer";
 const useStyles = makeStyles(theme => ({
   menuSliderContainer: {
     width: 250,
@@ -42,19 +44,23 @@ const useStyles = makeStyles(theme => ({
 const menuItems = [
   {
     listIcon: <Home />,
-    listText: "Home"
+    listText: "Home",
+    listPath: "/",
   },
   {
     listIcon: <AssignmentInd />,
-    listText: "Resume"
+    listText: "Resume",
+    listPath: "/resume",
   },
   {
     listIcon: <Apps />,
-    listText: "Portfolio"
+    listText: "Portfolio",
+    listPath: "/portfolio",
   },
   {
     listIcon: <ContactMail />,
-    listText: "Contacts"
+    listText: "Contacts",
+    listPath: "/contacts",
   }
 ];
 const NavBar = () => {
@@ -87,7 +93,7 @@ const NavBar = () => {
       <Divider />
       <List>
         {menuItems.map((item, key) => (
-          <ListItem button key={key}>
+          <ListItem button key={key} component={Link} to={item.listPath}>
             <ListItemIcon className={classes.listItem}>
               {item.listIcon}
             </ListItemIcon>
@@ -118,6 +124,7 @@ const NavBar = () => {
               open={state.right}
             >
               {sideList("right")}
+              <Footer/>
             </MobileRightMenuSlider>
           </Toolbar>
         </AppBar>
