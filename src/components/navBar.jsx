@@ -23,7 +23,8 @@ import {
   AssignmentInd,
   ContactMail
 } from "@material-ui/icons";
-import avatarimage from "../images/avatarimage.jpg";
+
+import officialcrop from "../images/officialcrop.jpg";
 import Footer from "./footer";
 const useStyles = makeStyles(theme => ({
   menuSliderContainer: {
@@ -88,7 +89,7 @@ const NavBar = () => {
     >
       <Avatar
         className={classes.avatar}
-        src={avatarimage}
+        src={officialcrop}
         alt="Dedan Msafari"
       />
       <Divider />

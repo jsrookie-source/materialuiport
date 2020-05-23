@@ -1,15 +1,8 @@
 import React from "react";
 import {
-  Card,
-  CardHeader,
-  Avatar,
   Typography,
   makeStyles,
-  CardMedia,
-  CardContent,
-  Link,
-  Box,
-  Button
+  Box
 } from "@material-ui/core";
 import NavBar from "./navBar";
 

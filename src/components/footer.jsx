@@ -1,16 +1,12 @@
-import React, { Component } from "react";
+import React from "react";
 import {
   BottomNavigation,
-  BottomNavigationAction,
   makeStyles,
   Link
 } from "@material-ui/core";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import GitHubIcon from '@material-ui/icons/GitHub';
-import WhatsAppIcon from "@material-ui/icons/WhatsApp";
 import EmailIcon from "@material-ui/icons/Email";
-import PhoneIcon from "@material-ui/icons/Phone";
-import TwitterIcon from "@material-ui/icons/Twitter";
 import InstagramIcon from '@material-ui/icons/Instagram';
 
 const useStyles = makeStyles({

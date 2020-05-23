@@ -1,6 +1,6 @@
 import React from 'react';
 import { CssBaseline } from '@material-ui/core';
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import { Switch, Route , Redirect} from 'react-router-dom'
 import Home from './components/home';
 import Resume from './components/resume';
