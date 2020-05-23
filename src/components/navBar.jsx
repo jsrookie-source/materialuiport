@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import {
   AppBar,
   Toolbar,
@@ -12,7 +12,8 @@ import {
   Typography,
   Box,
   makeStyles,
-  ListItemIcon
+  ListItemIcon,
+  Button
 } from "@material-ui/core";
 import MobileRightMenuSlider from "@material-ui/core/Drawer";
 import {
@@ -45,22 +46,22 @@ const menuItems = [
   {
     listIcon: <Home />,
     listText: "Home",
-    listPath: "/",
+    listPath: "/"
   },
   {
     listIcon: <AssignmentInd />,
     listText: "Resume",
-    listPath: "/resume",
+    listPath: "/resume"
   },
   {
     listIcon: <Apps />,
     listText: "Portfolio",
-    listPath: "/portfolio",
+    listPath: "/portfolio"
   },
   {
     listIcon: <ContactMail />,
     listText: "Contacts",
-    listPath: "/contacts",
+    listPath: "/contacts"
   }
 ];
 const NavBar = () => {
@@ -114,9 +115,8 @@ const NavBar = () => {
             <IconButton onClick={toggleSlider("right", true)}>
               <ArrowBack style={{ color: "tomato" }} />
             </IconButton>
-            <Typography style={{ color: "tan" }} variant="h5">
-              {" "}
-              Portfolio
+            <Typography  variant="h5">
+              <Button  style={{ color: "tan" }} onClick={toggleSlider("right", true)}>Portfolio</Button>
             </Typography>
             <MobileRightMenuSlider
               anchor="right"
@@ -124,7 +124,7 @@ const NavBar = () => {
               open={state.right}
             >
               {sideList("right")}
-              <Footer/>
+              <Footer />
             </MobileRightMenuSlider>
           </Toolbar>
         </AppBar>
