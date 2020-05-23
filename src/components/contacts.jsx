@@ -8,6 +8,8 @@ import {
   Grid
 } from "@material-ui/core";
 import Particles from "react-particles-js";
+import "react-toastify/dist/ReactToastify.css";
+import {toast} from "react-toastify";
 import * as emailjs from "emailjs-com";
 import { withStyles } from "@material-ui/core/styles";
 import { Send } from "@material-ui/icons";
@@ -68,6 +70,8 @@ function handleSubmit(e) {
      templateParams,
     'user_Oku7IEWfxFSQJBAiotYkM'
    )
+   
+   toast.success(" Thanks so much...I'll reach out to you soon");
    resetForm();
 }
 function resetForm() {
@@ -94,6 +98,7 @@ setEnquire('');
     <Box component="div" style={{ background: "#233", height: "120vh" }}>
       <NavBar />
       <Grid container justify="center">
+      
         <Box component="form" className={classes.form}>
           <Typography
             variant="h5"
