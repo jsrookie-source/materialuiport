@@ -39,7 +39,7 @@ const Header = () => {
           />
         </Grid>
         <Typography className={classes.subtitle} variant="h4">
-          <Typed strings={["Dedan Msafari"]} typeSpeed={250} />
+          <Typed strings={["Dedan Msafari"]} typeSpeed={150} />
         </Typography>
         <Typography className={classes.title} variant="h4">
           Building products that you'll love
@@ -58,7 +58,7 @@ const Header = () => {
               "Docker",
               "Github and Version Control"
             ]}
-            typeSpeed={70}
+            typeSpeed={60}
             backSpeed={50}
             loop
           />

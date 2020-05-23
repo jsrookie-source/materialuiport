@@ -103,7 +103,7 @@ setEnquire('');
           <Typography
             variant="h5"
             color="secondary"
-            style={{ textTransform: "uppercase" }}
+            style={{ textTransform: "uppercase", margin: 10 }}
           >
             Hire or contact me...
           </Typography>
@@ -114,6 +114,7 @@ setEnquire('');
             variant="outlined"
             margin="dense"
             size="medium"
+            style={{ margin: 10 }}
             value={name}
             onChange={handleNameChange}
           />
@@ -124,6 +125,7 @@ setEnquire('');
             inputProps={{ style: { color: "white" } }}
             variant="outlined"
             margin="dense"
+            style={{ margin: 10 }}
             size="medium"
             value={email}
             onChange={handleEmailChange}
@@ -131,21 +133,23 @@ setEnquire('');
           <br />
           <InputField
             fullWidth={true}
-            label="Campany Name/Address"
+            label="Campany/Address"
             variant="outlined"
             inputProps={{ style: { color: "white" } }}
             margin="dense"
+            style={{ margin: 10 }}
             size="medium"
             value={company}
             onChange={handleCompanyChange}
           />
           <br />
           <InputField
-            label="Brief description/enquiry"
+            label="enquiry"
             inputProps={{ style: { color: "white" } }}
             fullWidth={true}
             multiline
             margin="dense"
+            style={{ margin: 10 }}
             rows={5}
             size="medium"
             variant="outlined"
@@ -155,6 +159,7 @@ setEnquire('');
           <Button
             variant="outlined"
             className={classes.button}
+            style={{ margin: 10 }}
             endIcon={<Send />}
             fullWidth={true}
             onClick={handleSubmit}
